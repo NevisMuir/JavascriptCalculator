@@ -19,4 +19,20 @@ button{
 }
 #top-row{
     width:250px;
+    margin-top:50px;
+    
+}
+#screen{
+    width:450px;
+    height:150px;
+    background-color: rgba(214, 214, 214, 0.737);
+    border:1px solid black;
+    margin:30px auto;
+}
+#calculator{
+    margin:auto;
+    width: 500px;
+    align-content:center;
+    background-color: rgb(10, 7, 38);
+    padding:20px;
 }
