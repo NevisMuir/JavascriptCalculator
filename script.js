@@ -19,11 +19,16 @@ function operate (operator,a,b){
 }
 //screen is where we print the numbers and results
 let screen = document.querySelector('#screen')
+currentNumber=''
 //this array will store numbers and results
 let numberArray = []
 
-
-const numButton = document.querySelectorAll(".num");
-numButton.addEventListener('click', ()=>{
-
+//number buttons print number into screen, saved in currentNumber
+const numButtons = document.querySelectorAll(".num");
+numButtons.forEach((numButton)=>{
+    numButton.addEventListener('click', ()=>{
+        currentNumber += numButton.innerHTML
+        screen.innerHTML = currentNumber
+    })
 })
+
