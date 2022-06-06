@@ -19,7 +19,8 @@ function operate (operator,a,b){
 }
 //screen is where we print the numbers and results
 let screen = document.querySelector('#screen')
-currentNumber=''
+screen.innerHTML=0
+currentNumber='0'
 //this array will store numbers and results
 let numberArray = []
 
@@ -27,6 +28,8 @@ let numberArray = []
 const numButtons = document.querySelectorAll(".num");
 numButtons.forEach((numButton)=>{
     numButton.addEventListener('click', ()=>{
+        if(currentNumber==0 && numButton.innerHTML==0) return;
+        if(screen.innerHTML==0) currentNumber=""
         currentNumber += numButton.innerHTML
         screen.innerHTML = currentNumber
     })
