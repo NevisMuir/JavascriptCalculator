@@ -32,7 +32,7 @@ let numberArray = []
 const numButtons = document.querySelectorAll(".num");
 numButtons.forEach((numButton)=>{
     numButton.addEventListener('click', ()=>{
-        if(currentNumber==0 && numButton.innerHTML==0) return;
+        if(screen.innerHTML==0 && numButton.innerHTML==0) return;
         if(screen.innerHTML==0) currentNumber=""
         currentNumber += numButton.innerHTML
         screen.innerHTML = currentNumber
@@ -48,7 +48,7 @@ operators.forEach((operator)=> {
         if (numberArray.length>2)numberArray.shift();
         currentNumber=''
         //if current operator is empty,  save and await second number
-        if (currentOperator == ''|| currentOperator=='enter'){currentOperator=operator.id
+        if (currentOperator == ''|| currentOperator=='enter'|| currentOperator==operator.id){currentOperator=operator.id
         return}
         //if current operator is not empty, run operate and return to screen
         if(currentOperator !==''){
