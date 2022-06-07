@@ -68,3 +68,7 @@ clear.addEventListener('click', ()=>{
     currentOperator=''
     numberArray = []
 })
+const backspace = document.querySelector("#backspace")
+backspace.addEventListener('click',()=>{
+    screen.innerHTML = currentNumber.slice(0,-1)
+})
