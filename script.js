@@ -5,7 +5,7 @@ function subtract(array){
     return array[0]-array[1]
 }
 function multiply (array){
-    console.log('multiply')
+    
     return array[0]*array[1]
 }
 function divide (array){
@@ -18,6 +18,7 @@ function operate (array){
     if(currentOperator === '*'){return multiply(array)}
     if(currentOperator === '/'){return divide(array)}
 }
+
 //screen is where we print the numbers and results
 let screen = document.querySelector('#screen')
 screen.innerHTML=0
@@ -25,6 +26,7 @@ let currentNumber='0'
 let currentOperator=''
 //this array will store numbers and results
 let numberArray = []
+
 
 //number buttons print number into screen, saved in currentNumber
 const numButtons = document.querySelectorAll(".num");
@@ -58,8 +60,15 @@ operators.forEach((operator)=> {
             numberArray.push(result)
             if (length.numberArray>3)numberArray.shift()
             if (length.numberArray > 2)numberArray.shift()
+            console.log(numberArray)
             screen.innerHTML=result
         }
     })
 })
-
+const clear = document.querySelector('#AC')
+clear.addEventListener('click', ()=>{
+    screen.innerHTML=0
+    currentNumber='0'
+    currentOperator=''
+    numberArray = []
+})
