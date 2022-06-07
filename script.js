@@ -43,24 +43,20 @@ operators.forEach((operator)=> {
     operator.addEventListener('click', ()=> {
         //move current number into end of array
         numberArray.push(Number(screen.innerHTML));
-        console.log(numberArray)
         //if array is over 3, cut first value
         if (numberArray.length>3)numberArray.shift()
         if (numberArray.length>2)numberArray.shift();
-        console.log(numberArray)
         currentNumber=''
         //if current operator is empty,  save and await second number
         if (currentOperator == ''|| currentOperator=='enter'){currentOperator=operator.id
         return}
         //if current operator is not empty, run operate and return to screen
         if(currentOperator !==''){
-            console.log(currentOperator)
             let result = operate(numberArray)
             currentOperator=operator.id            
             numberArray.push(result)
             if (length.numberArray>3)numberArray.shift()
             if (length.numberArray > 2)numberArray.shift()
-            console.log(numberArray)
             screen.innerHTML=result
         }
     })
