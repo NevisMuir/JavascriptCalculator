@@ -44,7 +44,6 @@ operators.forEach((operator)=> {
         //move current number into end of array
         numberArray.push(Number(screen.innerHTML));
         //if array is over 3, cut first value
-        if (numberArray.length>3)numberArray.shift()
         if (numberArray.length>2)numberArray.shift();
         currentNumber=''
         //if current operator is empty,  save and await second number
@@ -55,8 +54,7 @@ operators.forEach((operator)=> {
             let result = operate(numberArray)
             currentOperator=operator.id            
             numberArray.push(result)
-            if (length.numberArray>3)numberArray.shift()
-            if (length.numberArray > 2)numberArray.shift()
+            if (numberArray.length > 2)numberArray.shift()
             screen.innerHTML=result
         }
     })
