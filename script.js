@@ -33,7 +33,7 @@ const numButtons = document.querySelectorAll(".num");
 numButtons.forEach((numButton)=>{
     numButton.addEventListener('click', ()=>{
         if(screen.innerHTML.includes(".")&&numButton.innerHTML=='.')return
-        if(screen.innerHTML==0 && numButton.innerHTML==0||screen.innerHTML.length>=8) return;
+        if(screen.innerHTML==0 && numButton.innerHTML==0||currentNumber.length>=8) return;
         if(screen.innerHTML==0) currentNumber=""
         currentNumber += numButton.innerHTML
         screen.innerHTML = currentNumber
