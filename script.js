@@ -48,7 +48,7 @@ operators.forEach((operator)=> {
         if (numberArray.length>2)numberArray.shift();
         currentNumber=''
         //if current operator is empty,  save and await second number
-        if (currentOperator == ''|| currentOperator=='enter'|| currentOperator==operator.id){currentOperator=operator.id
+        if (currentOperator == ''|| currentOperator=='enter'){currentOperator=operator.id
         return}
         //if current operator is not empty, run operate and return to screen
         if(currentOperator !==''){
