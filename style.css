@@ -13,14 +13,13 @@ button{
     justify-content: space-around;
     margin:10px 0;
 }
-#enter {
+#enter,#AC {
     border-radius: 13%;
     width: 230px;
 }
 #top-row{
-    width:250px;
-    margin-top:50px;
-    
+justify-content: space-around;
+width:375px;
 }
 #screen{
     width:450px;
@@ -33,6 +32,17 @@ button{
     margin:auto;
     width: 500px;
     align-content:center;
-    background-color: rgb(10, 7, 38);
+    background-color: rgb(22, 10, 127);
     padding:20px;
 }
+.num{
+    background-color: blanchedalmond;
+}
+.operator{
+    background-color:rgb(255, 21, 0);
+    color:white;
+}
+#AC,#backspace{
+    background-color: rgb(140, 140, 140);
+}
+
