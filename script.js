@@ -19,55 +19,55 @@ function operate (array){
     if(currentOperator === '/'){return divide(array)}
 }
 
-//screen is where we print the numbers and results
-let screen = document.querySelector('#screen')
-screen.innerHTML=0
+//activeNum is where we print the numbers and results
+let activeNum = document.querySelector('#activeNum')
+activeNum.innerHTML=0
 let currentNumber='0'
 let currentOperator=''
 //this array will store numbers and results
 let numberArray = []
 
 
-//number buttons print number into screen, saved in currentNumber
+//number buttons print number into activeNum, saved in currentNumber
 const numButtons = document.querySelectorAll(".num");
 numButtons.forEach((numButton)=>{
     numButton.addEventListener('click', ()=>{
-        if(screen.innerHTML.includes(".")&&numButton.innerHTML=='.')return
-        if(screen.innerHTML==0 && numButton.innerHTML==0||currentNumber.length>=8) return;
-        if(screen.innerHTML==0) currentNumber=""
+        if(activeNum.innerHTML.includes(".")&&numButton.innerHTML=='.')return
+        if(activeNum.innerHTML==0 && numButton.innerHTML==0||currentNumber.length>=8) return;
+        if(activeNum.innerHTML==0) currentNumber=""
         currentNumber += numButton.innerHTML
-        screen.innerHTML = currentNumber
+        activeNum.innerHTML = currentNumber
     })
 })
 const operators = document.querySelectorAll(".operator");
 operators.forEach((operator)=> {
     operator.addEventListener('click', ()=> {
         //move current number into end of array
-        numberArray.push(Number(screen.innerHTML));
+        numberArray.push(Number(activeNum.innerHTML));
         //if array is over 3, cut first value
         if (numberArray.length>2)numberArray.shift();
         currentNumber=''
         //if current operator is empty,  save and await second number
         if (currentOperator == ''|| currentOperator=='enter'){currentOperator=operator.id
         return}
-        //if current operator is not empty, run operate and return to screen
+        //if current operator is not empty, run operate and return to activeNum
         if(currentOperator !==''){
             let result = operate(numberArray)
             currentOperator=operator.id            
             numberArray.push(result)
             if (numberArray.length > 2)numberArray.shift()
-            screen.innerHTML=result
+            activeNum.innerHTML=result
         }
     })
 })
 const clear = document.querySelector('#AC')
 clear.addEventListener('click', ()=>{
-    screen.innerHTML=0
+    activeNum.innerHTML=0
     currentNumber='0'
     currentOperator=''
     numberArray = []
 })
 const backspace = document.querySelector("#backspace")
 backspace.addEventListener('click',()=>{
-    screen.innerHTML = currentNumber.slice(0,-1)
+    activeNum.innerHTML = currentNumber.slice(0,-1)
 })

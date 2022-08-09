@@ -1,7 +1,19 @@
 body *{
     font-size:xx-large ;
 }
-
+#screen{
+    display:flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+#storedNum{
+    justify-self:flex-start;
+    align-self:flex-start;
+}
+#activeNum{
+    font-size:200%;
+    margin-left:auto;
+}
 button{
     width:100px;
     height: 100px;
