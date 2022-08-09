@@ -1,12 +1,21 @@
 let display=document.querySelector('#storedNum')
+//indicator for if activeNum is a result of an operation
+let indicator=false
+//activeNum is where we print the numbers and results
+let activeNum = document.querySelector('#activeNum')
+activeNum.innerHTML=''
+//this array will store numbers and results
+let array = []
+
+//All Clear function
+let AC=document.querySelector('#AC')
+AC.addEventListener('click',clear)
 function clear(){
    display.innerHTML=''
    activeNum.innerHTML=''
     array.splice(0);
 }
 
-let AC=document.querySelector('#AC')
-AC.addEventListener('click',clear)
 
 function add (array){
     return Number(array[0])+Number(array[2])
@@ -35,18 +44,13 @@ function answer(){
     array.splice(0,3,activeNum.innerHTML)
     indicator=true
 }
-let indicator=false
-//activeNum is where we print the numbers and results
-let activeNum = document.querySelector('#activeNum')
-activeNum.innerHTML=''
-//this array will store numbers and results
-let array = []
+
 //enter function
 const enter=document.querySelector('#enter')
 enter.addEventListener('click', ()=>{
     if(array.length==2&&activeNum.innerHTML!=='')answer()
 })
-
+//backspace function
 const backspace=document.querySelector('#backspace')
 backspace.addEventListener('click', ()=>{
     if(activeNum.innerHTML!=='' && indicator==false){
@@ -99,16 +103,19 @@ operators.forEach((operator)=> {
         }
         //change operator before entering new number
         if(array.length==2&&activeNum.innerHTML=='')array.splice(1,1,operator.id)
+        //operate
         if(array.length==2&&activeNum.innerHTML!==''){
             answer()
             array.push(operator.id)
             return
         }
+        //publishes operation in progress to screen
         display.innerHTML=array[0] + ' ' + array[1]
    
     })
 })
-``
+
+
 
 
 
