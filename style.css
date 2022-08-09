@@ -6,12 +6,12 @@ body *{
     justify-content: flex-end;
     align-items:flex-end;
 }
-#storedNum{
+#operationScreen{
     justify-self:flex-start;
     align-self:flex-start;
     font-size: 75%;
 }
-#activeNum{
+#mainScreen{
     font-size:200%;
     margin-left:auto;
 }
