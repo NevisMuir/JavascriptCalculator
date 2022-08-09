@@ -9,6 +9,7 @@ body *{
 #storedNum{
     justify-self:flex-start;
     align-self:flex-start;
+    font-size: 75%;
 }
 #activeNum{
     font-size:200%;
@@ -50,7 +51,7 @@ width:375px;
 .num{
     background-color: blanchedalmond;
 }
-.operator{
+.operator,#enter{
     background-color:rgb(255, 21, 0);
     color:white;
 }
